@@ -1,0 +1,249 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (Traditional, Taiwan) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHT)
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_TRADITIONAL
+#pragma code_page(950)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHT)\r\n"
+    "LANGUAGE 4, 1\r\n"
+    "#pragma code_page(950)\r\n"
+    "#include ""res\\Dio.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""     // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\Dio.ico"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 235, 55
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About Dio"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "Dio Version 1.0",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2012",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,16,WS_GROUP
+END
+
+IDD_DIO_DIALOG DIALOGEX 0, 0, 331, 201
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "AAEON DIO Sample"
+FONT 10, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "Dio Current State",IDC_STATIC_DIOCURSTATE,7,20,60,8
+    PUSHBUTTON      "Set",IDC_BTN_SET,111,179,50,14
+    LTEXT           "Mode",IDC_MODE,11,54,18,8
+    LTEXT           "Value",IDC_VALUE,11,76,18,8
+    CTEXT           "Dio1",IDC_Pin0,45,35,15,8
+    CTEXT           "Dio2",IDC_Pin1,81,35,15,8
+    CTEXT           "Dio3",IDC_Pin2,117,35,15,8
+    CTEXT           "Dio4",IDC_Pin3,153,35,15,8
+    CTEXT           "Dio5",IDC_Pin4,189,35,15,8
+    CTEXT           "Dio6",IDC_Pin5,225,35,15,8
+    CTEXT           "Dio7",IDC_Pin6,261,35,15,8
+    CTEXT           "Dio8",IDC_pin7,297,35,16,8
+    LTEXT           "Mode",IDC_MODE1,11,134,18,8
+    LTEXT           "Value",IDC_VALUE1,11,154,18,8
+    CTEXT           "Dio1",IDC_DPin0,45,122,15,8
+    CTEXT           "Dio2",IDC_DPin1,81,122,15,8
+    CTEXT           "Dio3",IDC_DPin2,117,122,15,8
+    CTEXT           "Dio4",IDC_DPin3,153,122,15,8
+    CTEXT           "Dio5",IDC_DPin4,189,122,15,8
+    CTEXT           "Dio6",IDC_DPin5,225,122,15,8
+    CTEXT           "Dio7",IDC_DPin6,261,122,15,8
+    CTEXT           "Dio8",IDC_DPin7,297,122,15,8
+    LTEXT           "Dio Setting",IDC_STATIC_DIOSETTING,7,103,36,8
+    CTEXT           "Static",IDC_IO1,39,53,25,8
+    CTEXT           "Static",IDC_IO2,75,53,25,8
+    CTEXT           "Static",IDC_IO3,111,53,25,8
+    CTEXT           "Static",IDC_IO4,147,53,25,8
+    CTEXT           "Static",IDC_IO5,183,53,25,8
+    CTEXT           "Static",IDC_IO6,219,53,25,8
+    CTEXT           "Static",IDC_IO7,255,53,25,8
+    CTEXT           "Static",IDC_IO8,291,53,25,8
+    CTEXT           "Static",IDC_LH1,42,77,19,8
+    CTEXT           "Static",IDC_LH2,78,77,19,8
+    CTEXT           "Static",IDC_LH3,114,77,19,8
+    CTEXT           "Static",IDC_LH4,150,77,19,8
+    CTEXT           "Static",IDC_LH5,186,77,19,8
+    CTEXT           "Static",IDC_LH6,222,77,19,8
+    CTEXT           "Static",IDC_LH7,258,77,19,8
+    CTEXT           "Static",IDC_LH8,294,77,19,8
+    COMBOBOX        IDC_CMB_IO0,34,134,35,30,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_CMB_IO1,70,134,35,30,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_CMB_IO2,106,134,35,30,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_CMB_IO3,142,134,35,30,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_CMB_IO4,178,134,35,30,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_CMB_IO5,214,134,35,30,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_CMB_IO6,250,134,35,30,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_CMB_IO7,286,134,35,30,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_CMB_HL0,34,152,35,30,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_CMB_HL1,70,152,35,30,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_CMB_HL2,106,152,35,30,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_CMB_HL3,142,152,35,30,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_CMB_HL4,178,152,35,30,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_CMB_HL5,214,152,35,30,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_CMB_HL6,250,152,35,30,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_CMB_HL7,286,152,35,30,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_CMB_GROUP,269,7,44,14,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,2017,10,30
+ PRODUCTVERSION 1,2017,10,30
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "CompanyName", "AAEON (An ASUS assoc. co.)"
+            VALUE "FileDescription", "Digital IO App"
+            VALUE "FileVersion", "1.2017.10.30"
+            VALUE "InternalName", "Dio.exe"
+            VALUE "LegalCopyright", "(c) AAEON (An ASUS assoc. co.).  All rights reserved."
+            VALUE "OriginalFilename", "Dio.exe"
+            VALUE "ProductName", "Digital IO Sample"
+            VALUE "ProductVersion", "1.2017.10.30"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_DIO_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 324
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 194
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDS_ABOUTBOX            "&About Dio..."
+END
+
+#endif    // Chinese (Traditional, Taiwan) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHT)
+LANGUAGE 4, 1
+#pragma code_page(950)
+#include "res\Dio.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"     // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
