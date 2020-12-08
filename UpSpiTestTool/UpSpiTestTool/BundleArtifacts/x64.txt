@@ -1,0 +1,1 @@
+MainPackage=D:\backup\UpSpiTestTool\UpSpiTestTool\bin\x64\Release\UpSpiTestTool_1.0.0.0_x64.msix

@@ -1,2 +1,0 @@
-MainPackage=C:\Users\is012\source\repos\UpDemoApp\UpDemoApp\bin\x64\Release\UpDemoApp_1.0.0.0_x64.appx
-SymbolPackage=C:\Users\is012\source\repos\UpDemoApp\UpDemoApp\AppPackages\UpDemoApp_1.0.0.0_Test\UpDemoApp_1.0.0.0_x64.appxsym
