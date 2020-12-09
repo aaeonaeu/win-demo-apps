@@ -1,4 +1,4 @@
-# Windows platform smaple apps
+# Windows platform sample apps
 
 ## Hardware Requirements 
 Support all Up series products  
