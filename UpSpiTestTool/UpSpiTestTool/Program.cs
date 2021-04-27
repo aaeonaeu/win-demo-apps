@@ -1,5 +1,6 @@
 ﻿using System;
 using Windows.Devices.Spi;
+using System.Threading.Tasks;
 // This example code shows how you could implement the required main function for a 
 // Console UWP Application. You can replace all the code inside Main with your own custom code.
 
@@ -24,7 +25,7 @@ namespace UpSpiTestTool
           "  info         Display device information\n" +
           "  help         show commands\n" +
           "  Example:     %s> <commands>\n" +
-          "  exit         exit I2C test\n" +
+          "  exit         exit SPI test\n" +
           "\n";
         
         struct spiinfo
@@ -94,7 +95,7 @@ namespace UpSpiTestTool
                 Console.WriteLine(e.Message);
             }
         }
-        static async void spiwrite(string [] input)
+        static async Task spiwrite(string [] input)
         {
             try
             {
@@ -117,7 +118,7 @@ namespace UpSpiTestTool
                 Console.WriteLine(e.Message);
             }
         }
-        static async void spiread(string[] input)
+        static async Task spiread(string[] input)
         {
             try
             {
@@ -148,7 +149,7 @@ namespace UpSpiTestTool
                 Console.WriteLine(e.Message);
             }
         }
-        static async void spiwriteread(string[] input)
+        static async Task spiwriteread(string[] input)
         {
             try
             {          
@@ -160,13 +161,12 @@ namespace UpSpiTestTool
                 settings.Mode = spi.Mode;
                 settings.SharingMode = spi.SharingMode;
                 byte[] wrtiebuf = new byte[input.Length - 2];
-                for (int i = 1; i < input.Length-2; i++)
+                for (int i = 1; i <= input.Length-2; i++)
                 {
                     wrtiebuf[i - 1] = Convert.ToByte(input[i],16);
                 }
-                controller.GetDevice(settings).Write(wrtiebuf);
                 byte[] readbuf = new byte[Convert.ToInt32(input[input.Length-1])];
-                controller.GetDevice(settings).Read(readbuf);
+                controller.GetDevice(settings).TransferSequential(wrtiebuf,readbuf);
                 for (int i = 0; i < readbuf.Length; i++)
                 {
                     Console.WriteLine(i + " byte: " + readbuf[i].ToString("X"));
@@ -177,7 +177,7 @@ namespace UpSpiTestTool
                 Console.WriteLine(e.Message);
             }
         }
-        static async void spifullduplex(string[] input)
+        static async Task spifullduplex(string[] input)
         {
             try
             {
@@ -234,16 +234,16 @@ namespace UpSpiTestTool
                         spiset();
                         break;
                     case "write":
-                        spiwrite(inputnum);
+                        spiwrite(inputnum).Wait();
                         break;
                     case "read":
-                        spiread(inputnum);
+                        spiread(inputnum).Wait();
                         break;
                     case "writeread":
-                        spiwriteread(inputnum);
+                        spiwriteread(inputnum).Wait();
                         break;
                     case "fullduplex":
-                        spifullduplex(inputnum);
+                        spifullduplex(inputnum).Wait();
                         break;
                     case "info":
                         Console.WriteLine("ChipSelectLine   :   " + spi.ChipSelectLine+"\n");

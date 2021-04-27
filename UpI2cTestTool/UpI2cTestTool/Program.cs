@@ -1,5 +1,6 @@
 ﻿using System;
 using Windows.Devices.I2c;
+using System.Threading.Tasks;
 // This example code shows how you could implement the required main function for a 
 // Console UWP Application. You can replace all the code inside Main with your own custom code.
 
@@ -19,31 +20,31 @@ namespace UpI2cTestTool
           "  i2cdump      dump I2C address data\n" +
           "  i2cset       set I2C address data\n" +
           "  i2cget       get I2C address data\n" +
-          "  i2cspeed     set I2C bus speed\n" +
+          "  StandardMode set I2C bus speed\n" +
+          "  FastMode     set I2C bus speed\n" +
           "  help         show commands\n" +
           "  Example:     %s> <commands>\n" +
           "  exit         exit I2C test\n" +
           "\n";
 
-        static async void i2cdetect(string[] input)
+        static I2cBusSpeed[] speed= { I2cBusSpeed.StandardMode, I2cBusSpeed.StandardMode } ;
+
+        static async Task i2cdetect(string[] input)
         {               
             try
              {
             if(input.Length==2)
             {
                 UpBridge.Up upb = new UpBridge.Up();
-                //   I2cController controller = await I2cController.GetDefaultAsync();
-                Console.WriteLine("step 1 add controller");
-
-                    I2cController controller = (await I2cController.GetControllersAsync(UpWinApis.UpI2cProvider.GetI2cProvider()))[0];
-                    Console.WriteLine("step 2 setting");
-
-                    I2cConnectionSettings Settings = new I2cConnectionSettings(0x00);
-                    Console.WriteLine("step 3");
-
-                    Console.WriteLine(controller.GetDevice(Settings));
-                    Console.WriteLine(controller.GetDevice(Settings).DeviceId);
-
+                int index = Int32.Parse(input[1]);
+                if(index>2)
+                {
+                        Console.WriteLine("i2c have 0 & 1");
+                        throw new InvalidOperationException("i2c have 0 & 1");                      
+                }
+                I2cController controller = (await I2cController.GetControllersAsync(UpWinApis.UpI2cProvider.GetI2cProvider()))[index];
+                I2cConnectionSettings Settings = new I2cConnectionSettings(0x00);
+                Settings.BusSpeed = speed[index];
                 Console.WriteLine("     0    1   2   3   4   5   6   7   8   9   a   b   c   d   e   f");
                 byte[] writebuf = { 0x00 };
                 byte[] readbuf = new byte[1];
@@ -82,7 +83,7 @@ namespace UpI2cTestTool
             }
             else
             {
-                Console.WriteLine("command error,plese refer to below example \n" + "i2cdetect\n");
+                Console.WriteLine("command error,plese refer to below example \n" + "i2cdetect {busnumber}\n");
                 Console.WriteLine(Usage);
             }
             }
@@ -92,16 +93,21 @@ namespace UpI2cTestTool
             }
         }
 
-        static async void i2cdump(string[] input)
+        static async Task i2cdump(string[] input)
         {
-            if (input.Length == 2)
+            if (input.Length == 3)
             {
-                int slave= Convert.ToInt32(input[1], 16);
+                int slave= Convert.ToInt32(input[2], 16);
                 UpBridge.Up upb = new UpBridge.Up();
-                I2cController controller = await I2cController.GetDefaultAsync();
-              //  Int32.TryParse(input[1],out slave);
-
+                int index = Int32.Parse(input[1]);
+                if (index > 2)
+                {
+                    Console.WriteLine("i2c have 0 & 1");
+                    throw new InvalidOperationException("i2c have 0 & 1");
+                }
+                I2cController controller = (await I2cController.GetControllersAsync(UpWinApis.UpI2cProvider.GetI2cProvider()))[index];
                 I2cConnectionSettings Settings = new I2cConnectionSettings(slave);
+                Settings.BusSpeed = speed[index];
                 Console.WriteLine("     0    1   2   3   4   5   6   7   8   9   a   b   c   d   e   f");
                 byte[] writebuf = new byte[1];
                 byte[] readbuf = new byte[1];
@@ -139,23 +145,29 @@ namespace UpI2cTestTool
             else
             {
                 Console.WriteLine("command error,plese refer to below example \n" +
-                     "i2cdump {i2c address}\n");
+                     "i2cdump {bus number} {i2c address}\n");
                 Console.WriteLine(Usage);
             }
         }
-        static async void i2cset(string[] input)
+        static async Task i2cset(string[] input)
         {
-            if (input.Length == 4)
+            if (input.Length == 5)
             {
-                int slave = Convert.ToInt32(input[1], 16);
+                int slave = Convert.ToInt32(input[2], 16);
                 UpBridge.Up upb = new UpBridge.Up();
-                I2cController controller = await I2cController.GetDefaultAsync();
-               // Int32.TryParse(input[1], out slave);
-                
+                int index = Int32.Parse(input[1]);
+                if (index > 2)
+                {
+                    Console.WriteLine("i2c have 0 & 1");
+                    throw new InvalidOperationException("i2c have 0 & 1");
+                }
+                I2cController controller = (await I2cController.GetControllersAsync(UpWinApis.UpI2cProvider.GetI2cProvider()))[index];
+
                 I2cConnectionSettings Settings = new I2cConnectionSettings(slave);
+                Settings.BusSpeed = speed[index];
                 byte[] writebuf = new byte[2];
-                writebuf[0] = Convert.ToByte(input[2],16);
-                writebuf[1] = Convert.ToByte(input[3],16);
+                writebuf[0] = Convert.ToByte(input[3],16);
+                writebuf[1] = Convert.ToByte(input[4],16);
 
                 try
                 {
@@ -171,21 +183,27 @@ namespace UpI2cTestTool
             else
             {
                 Console.WriteLine("command error,plese refer to below example \n" +
-                                    "i2cset {i2c address} {i2c register} {i2cdata}\n");
+                                    "i2cset {bus number} {i2c address} {i2c register} {i2cdata}\n");
                 Console.WriteLine(Usage);
             }
         }
-        static async void i2cget(string[] input)
+        static async Task i2cget(string[] input)
         {
-            if (input.Length == 3)
+            if (input.Length == 4)
             {
-                int slave = Convert.ToInt32(input[1], 16);
+                int slave = Convert.ToInt32(input[2], 16);
                 UpBridge.Up upb = new UpBridge.Up();
-                I2cController controller = await I2cController.GetDefaultAsync();
-               // Int32.TryParse(input[1], out slave);
+                int index = Int32.Parse(input[1]);
+                if (index > 2)
+                {
+                    Console.WriteLine("i2c have 0 & 1");
+                    throw new InvalidOperationException("i2c have 0 & 1");
+                }
+                I2cController controller = (await I2cController.GetControllersAsync(UpWinApis.UpI2cProvider.GetI2cProvider()))[index];
                 I2cConnectionSettings Settings = new I2cConnectionSettings(slave);
+                Settings.BusSpeed = speed[index];
                 byte[] writebuf = new byte[1];
-                writebuf[0] = Convert.ToByte(input[2],16);
+                writebuf[0] = Convert.ToByte(input[3],16);
                 byte[] readbuf = new byte[1];
                 try
                 {
@@ -202,20 +220,40 @@ namespace UpI2cTestTool
             else
             {
                 Console.WriteLine("command error,plese refer to below example \n" +
-                                    "i2cget {i2c address} {i2c register}\n");
+                                    "i2cget {bus number} {i2c address} {i2c register}\n");
                 Console.WriteLine(Usage);
             }
         }
-        //static async void i2cspeed(int speed)
-        //{
-        //    UpBridge.Up upb = new UpBridge.Up();
-        //    I2cController controller = await I2cController.GetDefaultAsync();
-        //    I2cConnectionSettings Settings = new I2cConnectionSettings(0x00);
-        //    if (speed < 100000)
-        //        Settings.BusSpeed = I2cBusSpeed.StandardMode;
-        //    else
-        //        Settings.BusSpeed = I2cBusSpeed.FastMode;
-        //} 
+        static void i2cspeed(string[] input)
+        {
+            try
+            {
+                if (input.Length == 2)
+                {
+                    int index = Int32.Parse(input[1]);
+                    if (index > 2)
+                    {
+                        Console.WriteLine("i2c have 0 & 1");
+                        throw new InvalidOperationException("i2c have 0 & 1");
+                    }
+                    if (input[0] == "StandardMode")
+                        speed[index] = I2cBusSpeed.StandardMode;
+                    else if (input[0] == "FastMode")
+                        speed[index] = I2cBusSpeed.FastMode;
+                    else
+                        Console.WriteLine("StandardMode {bus number} or FastMode  {bus number}");
+                }
+                else
+                {
+                    Console.WriteLine("StandardMode {bus number} or FastMode  {bus number}");
+                }
+            }
+            catch (Exception)
+            {
+                Console.Write("NOT to set speed" + "\n");
+            }
+            
+        }
         static void Main(string[] args)
         {
             string input = "";
@@ -238,16 +276,20 @@ namespace UpI2cTestTool
                 switch (inputnum[0])
                 {
                     case "i2cdetect":
-                        i2cdetect(inputnum);
+                        i2cdetect(inputnum).Wait();
                         break;
                     case "i2cdump":
-                        i2cdump(inputnum);
+                        i2cdump(inputnum).Wait();
                         break;
                     case "i2cset":
-                        i2cset(inputnum);
+                        i2cset(inputnum).Wait();
                         break;
                     case "i2cget":
-                        i2cget(inputnum);
+                        i2cget(inputnum).Wait();
+                        break;
+                    case "StandardMode":
+                    case "FastMode":
+                        i2cspeed(inputnum);
                         break;
                     case "exit":
                         exit = inputnum[0].Equals("exit");
@@ -257,6 +299,7 @@ namespace UpI2cTestTool
                         Console.WriteLine(Usage);
                         break;
                 }
+
             }
         }
     }
