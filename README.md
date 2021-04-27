@@ -26,6 +26,9 @@ AAEON EAPI PWM sample app
 * UpGpioTestTool  
 Windows api UWP sample app for Gpio
 
+* UpAdcTestTool  
+Windows api UWP sample app for Adc
+
 * UpI2cTestTool  
 Windows api UWP sample app for I2c 
 
