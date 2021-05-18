@@ -6,7 +6,7 @@ https://up-shop.org/
 
 ## Software Requirements
 Microsoft Visual Studio 2017/2019  
-[Up Framework](https://aaeon365-my.sharepoint.com/personal/software_aaeon_eu/_layouts/15/onedrive.aspx?originalPath=aHR0cHM6Ly9hYWVvbjM2NS1teS5zaGFyZXBvaW50LmNvbS86ZjovZy9wZXJzb25hbC9zb2Z0d2FyZV9hYWVvbl9ldS9FczE2Ujd6ZGViSkpuVUdMbkZEdUFIRUJNbVFPUEVONDU3S1gwWjZCQ1M3T1BBP3J0aW1lPUlTcUhldy1jMkVn&id=%2Fpersonal%2Fsoftware%5Faaeon%5Feu%2FDocuments%2FDownloads%2FWindows%2FWindows%20SDK%2FUP%2FWindows%20SDK)
+[Up Framework](https://downloads.up-community.org/download/up-sdk-for-windows-10-and-windows-iot/)
 
 
 
