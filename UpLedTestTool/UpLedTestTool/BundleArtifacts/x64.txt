@@ -1,0 +1,1 @@
+MainPackage=C:\Users\is012\source\repos\UpLedTestTool\UpLedTestTool\bin\x64\Release\UpLedTestTool_1.0.0.0_x64.msix
