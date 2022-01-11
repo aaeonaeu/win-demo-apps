@@ -1,1 +1,0 @@
-MainPackage=D:\backup\UpI2cTestTool\UpI2cTestTool\bin\x64\Release\UpI2cTestTool_1.0.0.0_x64.msix

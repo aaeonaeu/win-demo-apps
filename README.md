@@ -23,28 +23,31 @@ Uart port sample app
 * PWM/C++  
 AAEON EAPI PWM sample app
 
-* UpGpioTestTool  
-Windows api UWP sample app for Gpio
+* UpBusTool  
+Windows api UWP sample app for UpGpioTestTool/UpAdcTestTool/UpI2cTestTool/UpPwmTestTool/UpSpiTestTool/UpFanControl
 
-* UpAdcTestTool  
-Windows api UWP sample app for Adc
+    * UpGpioTestTool  
+        Windows api UWP sample app for Gpio
 
-* UpI2cTestTool  
-Windows api UWP sample app for I2c 
+    * UpAdcTestTool  
+        Windows api UWP sample app for Adc
 
-* UpPwmTestTool  
-Windows api UWP sample app for Pwm
+    * UpI2cTestTool  
+        Windows api UWP sample app for I2c 
 
-* UpSpiTestTool  
-Windows api UWP sample app for Spi 
+    * UpPwmTestTool  
+        Windows api UWP sample app for Pwm
+
+    * UpSpiTestTool  
+        Windows api UWP sample app for Spi
+
+    * UpFanControl   
+        Fan Control Example for UPX-TGL01 (i11)
 
 * UpLedTestTool  
 Windows api UWP sample app for Led control 
 
 * lora_pkt_fwd  
 Windows app for LoRa packet forward
-
-*FanControl   
-Fan Control Example for UPX-TGL01 (i11)
  
 
