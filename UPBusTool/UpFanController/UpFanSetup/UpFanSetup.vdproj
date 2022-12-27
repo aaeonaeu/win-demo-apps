@@ -33,6 +33,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_14F5A7DB5E67435EBE7B072F9E5E66B0"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_22B42832FD87490FBF9CC4C77F0E6CA0"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -41,12 +47,6 @@
         {
         "MsmKey" = "8:_2511F9FB29F947C0ABD2AADC4C9E2D8A"
         "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_4239891B33F3575E4CE68D4623DE6021"
-        "OwnerKey" = "8:_5139D359FAF547F9810B7D9465746CD0"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -82,13 +82,7 @@
         "Entry"
         {
         "MsmKey" = "8:_5F9F67E1F6A914A483655E1A9207FFFD"
-        "OwnerKey" = "8:_5FBBA8F8F2BB4BE2914211A9EEEF4767"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_5FBBA8F8F2BB4BE2914211A9EEEF4767"
-        "OwnerKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_14F5A7DB5E67435EBE7B072F9E5E66B0"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -123,19 +117,19 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_79ECFC8DC1134769B6690492E01BDA25"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_807DFEED04F9620683E6610434AE3A87"
-        "OwnerKey" = "8:_5FBBA8F8F2BB4BE2914211A9EEEF4767"
+        "OwnerKey" = "8:_14F5A7DB5E67435EBE7B072F9E5E66B0"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_8B15BF6FFEEC4122842F5341118B417C"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_923E769AF0FA4DE6B1930EE4644E6863"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -166,7 +160,7 @@
         "Entry"
         {
         "MsmKey" = "8:_9E9B8BFD55550B32B686407E638B19BA"
-        "OwnerKey" = "8:_5FBBA8F8F2BB4BE2914211A9EEEF4767"
+        "OwnerKey" = "8:_14F5A7DB5E67435EBE7B072F9E5E66B0"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -201,6 +195,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_BDCAF61A722900A130379228F3A8B7C7"
+        "OwnerKey" = "8:_5139D359FAF547F9810B7D9465746CD0"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_C324A327027F4EBAACC73E1CC9D82594"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -231,14 +231,20 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_E3902042DB9340B4A1CF42B8B48DACAB"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_E806555F13F49381BEBFB3D888A15303"
-        "OwnerKey" = "8:_5FBBA8F8F2BB4BE2914211A9EEEF4767"
+        "OwnerKey" = "8:_14F5A7DB5E67435EBE7B072F9E5E66B0"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_EA29305B0409DAF6DF78CBED8388A12B"
-        "OwnerKey" = "8:_5FBBA8F8F2BB4BE2914211A9EEEF4767"
+        "OwnerKey" = "8:_14F5A7DB5E67435EBE7B072F9E5E66B0"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -256,13 +262,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_4239891B33F3575E4CE68D4623DE6021"
+        "OwnerKey" = "8:_2511F9FB29F947C0ABD2AADC4C9E2D8A"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_5FBBA8F8F2BB4BE2914211A9EEEF4767"
+        "OwnerKey" = "8:_14F5A7DB5E67435EBE7B072F9E5E66B0"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -298,13 +304,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_2511F9FB29F947C0ABD2AADC4C9E2D8A"
+        "OwnerKey" = "8:_5139D359FAF547F9810B7D9465746CD0"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_5139D359FAF547F9810B7D9465746CD0"
+        "OwnerKey" = "8:_BDCAF61A722900A130379228F3A8B7C7"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -491,6 +497,37 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_14F5A7DB5E67435EBE7B072F9E5E66B0"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:UpBridge, Version=255.255.255.255, Culture=neutral"
+                "ScatterAssemblies"
+                {
+                    "_14F5A7DB5E67435EBE7B072F9E5E66B0"
+                    {
+                    "Name" = "8:UpBridge.winmd"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:..\\..\\UpBridge\\UpBridge.winmd"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_2B72ABF3B7D84DA4BB6D52E9FFAEACDF"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_22B42832FD87490FBF9CC4C77F0E6CA0"
             {
             "SourcePath" = "8:..\\Fan\\bin\\x64\\Release\\vccorlib140_app.dll"
@@ -540,37 +577,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_4239891B33F3575E4CE68D4623DE6021"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:OpenHardwareMonitorLib, Version=0.9.6.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_4239891B33F3575E4CE68D4623DE6021"
-                    {
-                    "Name" = "8:OpenHardwareMonitorLib.DLL"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:OpenHardwareMonitorLib.DLL"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_2B72ABF3B7D84DA4BB6D52E9FFAEACDF"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_45A4ABABA05E4E229C9ACDD3BDE62596"
@@ -695,37 +701,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_5FBBA8F8F2BB4BE2914211A9EEEF4767"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:UpEApis, Version=255.255.255.255, Culture=neutral"
-                "ScatterAssemblies"
-                {
-                    "_5FBBA8F8F2BB4BE2914211A9EEEF4767"
-                    {
-                    "Name" = "8:UpEApis.winmd"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:..\\Fan\\bin\\x64\\Release\\UpEApis.winmd"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_2B72ABF3B7D84DA4BB6D52E9FFAEACDF"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6185B717198C4CAAB29043ACE19E9E9C"
             {
             "SourcePath" = "8:..\\Fan\\bin\\x64\\Release\\vcomp140_app.dll"
@@ -826,26 +801,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_79ECFC8DC1134769B6690492E01BDA25"
-            {
-            "SourcePath" = "8:..\\Fan\\bin\\x64\\Release\\UpEApis.dll"
-            "TargetName" = "8:UpEApis.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_2B72ABF3B7D84DA4BB6D52E9FFAEACDF"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_807DFEED04F9620683E6610434AE3A87"
             {
             "AssemblyRegister" = "3:1"
@@ -881,6 +836,26 @@
             {
             "SourcePath" = "8:..\\Fan\\bin\\x64\\Release\\fan.pdb"
             "TargetName" = "8:fan.pdb"
+            "Tag" = "8:"
+            "Folder" = "8:_2B72ABF3B7D84DA4BB6D52E9FFAEACDF"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_923E769AF0FA4DE6B1930EE4644E6863"
+            {
+            "SourcePath" = "8:..\\..\\UpBridge\\UpBridge.dll"
+            "TargetName" = "8:UpBridge.dll"
             "Tag" = "8:"
             "Folder" = "8:_2B72ABF3B7D84DA4BB6D52E9FFAEACDF"
             "Condition" = "8:"
@@ -1108,6 +1083,37 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_BDCAF61A722900A130379228F3A8B7C7"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:OpenHardwareMonitorLib, Version=0.9.6.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_BDCAF61A722900A130379228F3A8B7C7"
+                    {
+                    "Name" = "8:OpenHardwareMonitorLib.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:OpenHardwareMonitorLib.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_2B72ABF3B7D84DA4BB6D52E9FFAEACDF"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C324A327027F4EBAACC73E1CC9D82594"
             {
             "SourcePath" = "8:..\\Fan\\bin\\x64\\Release\\vcruntime140_1_app.dll"
@@ -1194,6 +1200,26 @@
             "TargetName" = "8:install.js"
             "Tag" = "8:"
             "Folder" = "8:_372B8E9E4A914D1E8272DAFBAB927229"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E3902042DB9340B4A1CF42B8B48DACAB"
+            {
+            "SourcePath" = "8:..\\..\\UpBridge\\UpBridge.lib"
+            "TargetName" = "8:UpBridge.lib"
+            "Tag" = "8:"
+            "Folder" = "8:_2B72ABF3B7D84DA4BB6D52E9FFAEACDF"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -1411,7 +1437,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:UpFanCtl"
         "ProductCode" = "8:{110FF81C-38EB-4D97-8D17-3DAE8AF0A463}"
-        "PackageCode" = "8:{E5DC746E-FB62-4D7C-B415-F86D8F61F10C}"
+        "PackageCode" = "8:{47087047-B0F9-4835-BE00-6B82E6B8E0A4}"
         "UpgradeCode" = "8:{13C87F80-104B-43A3-B3DC-1C9C6BCDCA89}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"

@@ -42,7 +42,7 @@ namespace UpI2cTestTool
                         Console.WriteLine("i2c have 0 & 1");
                         throw new InvalidOperationException("i2c have 0 & 1");                      
                 }
-                I2cController controller = (await I2cController.GetControllersAsync(UpWinApis.UpI2cProvider.GetI2cProvider()))[index];
+                I2cController controller = (await I2cController.GetControllersAsync(UpBridge.UpI2cProvider.GetI2cProvider()))[index];
                 I2cConnectionSettings Settings = new I2cConnectionSettings(0x00);
                 Settings.BusSpeed = speed[index];
                 Console.WriteLine("     0    1   2   3   4   5   6   7   8   9   a   b   c   d   e   f");
@@ -105,7 +105,7 @@ namespace UpI2cTestTool
                     Console.WriteLine("i2c have 0 & 1");
                     throw new InvalidOperationException("i2c have 0 & 1");
                 }
-                I2cController controller = (await I2cController.GetControllersAsync(UpWinApis.UpI2cProvider.GetI2cProvider()))[index];
+                I2cController controller = (await I2cController.GetControllersAsync(UpBridge.UpI2cProvider.GetI2cProvider()))[index];
                 I2cConnectionSettings Settings = new I2cConnectionSettings(slave);
                 Settings.BusSpeed = speed[index];
                 Console.WriteLine("     0    1   2   3   4   5   6   7   8   9   a   b   c   d   e   f");
@@ -161,7 +161,7 @@ namespace UpI2cTestTool
                     Console.WriteLine("i2c have 0 & 1");
                     throw new InvalidOperationException("i2c have 0 & 1");
                 }
-                I2cController controller = (await I2cController.GetControllersAsync(UpWinApis.UpI2cProvider.GetI2cProvider()))[index];
+                I2cController controller = (await I2cController.GetControllersAsync(UpBridge.UpI2cProvider.GetI2cProvider()))[index];
 
                 I2cConnectionSettings Settings = new I2cConnectionSettings(slave);
                 Settings.BusSpeed = speed[index];
@@ -199,7 +199,7 @@ namespace UpI2cTestTool
                     Console.WriteLine("i2c have 0 & 1");
                     throw new InvalidOperationException("i2c have 0 & 1");
                 }
-                I2cController controller = (await I2cController.GetControllersAsync(UpWinApis.UpI2cProvider.GetI2cProvider()))[index];
+                I2cController controller = (await I2cController.GetControllersAsync(UpBridge.UpI2cProvider.GetI2cProvider()))[index];
                 I2cConnectionSettings Settings = new I2cConnectionSettings(slave);
                 Settings.BusSpeed = speed[index];
                 byte[] writebuf = new byte[1];

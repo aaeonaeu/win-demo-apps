@@ -104,7 +104,7 @@ namespace fan
         //Read Fan pwm duty by smbus
         static byte pwmduty()
         {
-            UpEApis.EApis upb = new UpEApis.EApis();
+            UpBridge.Up upb = new UpBridge.Up();
             byte[] wdata = new byte[1];
             wdata[0] = 0x40;
             byte[] rdata = new byte[1] { 0 };
@@ -115,7 +115,7 @@ namespace fan
         //Write Fan pwm duty by smbus
         static void pwmduty(byte write)
         {
-            UpEApis.EApis upb = new UpEApis.EApis();
+            UpBridge.Up upb = new UpBridge.Up();
             byte[] wdata = new byte[2];
             wdata[0] = 0x40;
             wdata[1] = write;

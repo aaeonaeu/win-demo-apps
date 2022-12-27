@@ -62,14 +62,15 @@ namespace UpPwmTestTool
                 bool exit = input.Equals("exit");
                 UpBridge.Up upb = new UpBridge.Up();
                 Console.WriteLine("UWP console PWM test:");
-                PwmController controller = await PwmController.GetDefaultAsync();
-                pin1.pin = 0;
+
                 //print Board INFO
                 Console.WriteLine(upb.BoardGetManufacture() + "\n"
                             + "Board Name:  " + upb.BoardGetName() + "\n"
                             + "BIOS Ver:    " + upb.BoardGetBIOSVersion() + "\n"
                             + "Firmware Ver:" + upb.BoardGetFirmwareVersion().ToString("X") + "\n");
-                PwmPin pin = controller.OpenPin(0);
+                pin1.pin = -1;
+                PwmController controller= null;
+                PwmPin pin= null;
 
                 Console.WriteLine(Usage);
                 while (exit == false)
@@ -85,7 +86,6 @@ namespace UpPwmTestTool
                         case "set":
                             if (inputnum.Length == 2)
                             {
-                                pin.Dispose();
                                 int pin_convert;
                                 if (int.TryParse(inputnum[1], out pin_convert))
                                 {
@@ -101,12 +101,12 @@ namespace UpPwmTestTool
                                         {
                                             controller = await PwmController.GetDefaultAsync();
                                             pin = controller.OpenPin(pin1.pin);
+                                            pin.Start();
                                             Console.WriteLine("You select pin   " + pin1.pin + "   to set");
                                         }
                                         catch (Exception e)
                                         {
-                                            pin1.pin = pin_current;
-                                            pin = controller.OpenPin(pin1.pin);
+                                            pin1.pin = -1;
                                             Console.WriteLine(e.Message);
                                         }
                                     }
@@ -122,19 +122,26 @@ namespace UpPwmTestTool
                             }
                             break;
                         case "get":
-                            if (inputnum.Length == 1)
+                            try
                             {
-                                Console.WriteLine("Pin  " + pin1.pin + "\n");
-                                Console.WriteLine("Max Frequency    :   " + controller.MaxFrequency + "\n");
-                                Console.WriteLine("Min Frequency    :   " + controller.MinFrequency + "\n");
-                                Console.WriteLine("Actual Frequency :   " + controller.ActualFrequency + "\n");
-                                Console.WriteLine("Duty Cycle       :   " + pin.GetActiveDutyCyclePercentage() + "\n");
-                                Console.WriteLine("Pin Status       :   " + pin.IsStarted + "\n");
-                            }
-                            else
-                            {
-                                Console.WriteLine("Please input : get");
+                                if (inputnum.Length == 1)
+                                {
+                                    Console.WriteLine("Pin  " + pin1.pin + "\n");
+                                    Console.WriteLine("Max Frequency    :   " + controller.MaxFrequency + "\n");
+                                    Console.WriteLine("Min Frequency    :   " + controller.MinFrequency + "\n");
+                                    Console.WriteLine("Actual Frequency :   " + controller.ActualFrequency + "\n");
+                                    Console.WriteLine("Duty Cycle       :   " + pin.GetActiveDutyCyclePercentage() + "\n");
+                                    Console.WriteLine("Pin Status       :   " + pin.IsStarted + "\n");
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Please input : get");
 
+                                }
+                            }
+                            catch (Exception e)
+                            {
+                                Console.WriteLine(e.Message);
                             }
                             break;
                         case "frequency":
