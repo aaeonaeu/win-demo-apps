@@ -93,30 +93,37 @@ namespace UpGpioTestTool
                     switch (input)
                     {
                         case "pollout":
+                            string count;
+                            string time;
+                            Console.WriteLine("Enter polling test count in pin {0}...", selpin);
+                            count=Console.ReadLine();
+                            Console.WriteLine("Enter polling interval time in pin {0}...", selpin);
+                            time = Console.ReadLine();
+
                             Console.WriteLine("polling output in pin {0}...", selpin);
                             gpioPin.SetDriveMode(GpioPinDriveMode.Output);
                             gpioPin.Write(GpioPinValue.High);
                             int s = Environment.TickCount;
-                            for (int i=0;i<100000;i++)
+                            for (int i=0;i< int.Parse(count); i++)
                             {
-                                if(i%2==0)
-                                    gpioPin.Write(GpioPinValue.Low);
-                                else
-                                    gpioPin.Write(GpioPinValue.High);
-                                sleep(1);
+                                gpioPin.Write(GpioPinValue.Low);
+                                sleep(int.Parse(time));
+                                gpioPin.Write(GpioPinValue.High);
+                                sleep(int.Parse(time));
                             }
-                            Console.WriteLine("polling output...100000 times completed!!, total time:{0} s", (Environment.TickCount-s)/1000);
+                            Console.WriteLine("polling output...{0} times completed!!, total time:{1} s", count, (Environment.TickCount-s)/1000);
                             break;
                         case "irq":
-                            Timer t;
-                            Console.WriteLine("irq testing...");
+                            //Timer t;
+                            Console.WriteLine("irq testing...please enter to exit");
                             gpioPin.SetDriveMode(GpioPinDriveMode.Input);
                             gpioPin.ValueChanged += UpGpioValueChanged;
-                            t = new Timer(new TimerCallback(UpGpioIrqProc));
-                            t.Change(1000, 1000); //1sec interval to count 
+                            //t = new Timer(new TimerCallback(UpGpioIrqProc));
+                            //t.Change(1000, 1000); //1sec interval to count 
                             Console.ReadLine();
+                            rising = falling = 0;
                             gpioPin.ValueChanged -= UpGpioValueChanged;
-                            t.Dispose();
+                            //t.Dispose();
                             break;
                         case "status":
                             Console.WriteLine(gpioPin.GetDriveMode().ToString());
@@ -190,9 +197,25 @@ namespace UpGpioTestTool
 
         private static void UpGpioValueChanged(GpioPin sender, GpioPinValueChangedEventArgs args)
         {
-            gs.edge = args.Edge;
-            gs.tt = Environment.TickCount; //ms
-            lgs.Add(gs);
+            //gs.edge = args.Edge;
+            //gs.tt = Environment.TickCount; //ms
+            //lgs.Add(gs);
+            switch (args.Edge)
+            {
+                case GpioPinEdge.FallingEdge:
+                    {
+                        falling++;
+                        break;
+                    }
+                case GpioPinEdge.RisingEdge:
+                    {
+                        rising++;
+                        break;
+                    }
+                default:
+                    break;
+            }
+            Console.Write("\rRising: {0}, falling: {1}", rising, falling);
         }
     }
 }
