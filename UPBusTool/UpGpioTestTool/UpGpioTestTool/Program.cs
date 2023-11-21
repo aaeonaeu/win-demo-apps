@@ -41,27 +41,34 @@ namespace UpGpioTestTool
         static GpioState gs = new GpioState();
         static List<GpioState> lgs = new List<GpioState>();
         static int rising, falling;
-
+        static int record_intpin;
         static void Main(string[] args)
         {
-            try
+            if(GpioController.GetDefault()==null)
             {
-                UpBridge.Up upb = new UpBridge.Up();
+                try
+                {
+                    UpBridge.Up upb = new UpBridge.Up();
 
-                Console.WriteLine(upb.BoardGetManufacture() + "\n"
-                            + "Board Name:  " + upb.BoardGetName() + "\n"
-                            + "BIOS Ver:    " + upb.BoardGetBIOSVersion() + "\n"
-                            + "Firmware Ver:" + upb.BoardGetFirmwareVersion().ToString("X") + "\n");
+                    Console.WriteLine(upb.BoardGetManufacture() + "\n"
+                                + "Board Name:  " + upb.BoardGetName() + "\n"
+                                + "BIOS Ver:    " + upb.BoardGetBIOSVersion() + "\n"
+                                + "Firmware Ver:" + upb.BoardGetFirmwareVersion().ToString("X") + "\n");
+                }
+                catch (InvalidOperationException ie)
+                {
+                    Console.WriteLine(ie.Message);
+                }
+
             }
-            catch (InvalidOperationException ie)
-            {
-                Console.WriteLine(ie.Message);
-            }
+
             Console.WriteLine("Up UWP console GPIO test:");
 
             if (GpioController.GetDefault().PinCount > 0)
             {
                 GpioPin gpioPin=null;
+                GpioPin[] igpio = new GpioPin[28];
+                int[] gindex = new int[28] {3,5,7,8,10,11,12,13,15,16,18,19,21,22,23,24,26,27,28,29,31,32,33,35,36,37,38,40};
                 int selpin = -1;
                 while (true)
                 {
@@ -81,13 +88,50 @@ namespace UpGpioTestTool
                             try
                             {
                                 gpioPin = GpioController.GetDefault().OpenPin(selpin);
-                            }catch(InvalidOperationException ie)
+                            } catch (InvalidOperationException ie)
                             {
                                 Console.WriteLine(ie.Message);
                                 selpin = -1;
                             }
                         }
                         continue;
+                    }
+                    else if (inArgs[0] == "test")
+                    {
+                        
+                        for (int index = 0; index < gindex.Length; index++)
+                        {
+                            try
+                            {
+                                igpio[index] = GpioController.GetDefault().OpenPin(gindex[index]-1);
+                                igpio[index].SetDriveMode(GpioPinDriveMode.Input);
+                                igpio[index].ValueChanged += UpGpioIntTest;
+                                sleep(100);
+                            }
+                            catch (InvalidOperationException ie)
+                            {
+                                Console.WriteLine(ie.Message);
+                            }
+                        }
+                        Timer t;
+                        t = new Timer(new TimerCallback(UpGpioIrqProc));
+                        t.Change(1000, 1000); //1sec interval to count 
+                        Console.ReadLine();
+
+                        for (int index = 0; index < gindex.Length; index++)
+                        {
+                            try
+                            {
+                                igpio[index].ValueChanged -= UpGpioIntTest;
+                            }
+                            catch (InvalidOperationException ie)
+                            {
+                                Console.WriteLine(ie.Message);
+                            }
+                        }
+
+                        t.Dispose();
+
                     }
 
                     switch (input)
@@ -114,16 +158,16 @@ namespace UpGpioTestTool
                             Console.WriteLine("polling output...{0} times completed!!, total time:{1} s", count, (Environment.TickCount-s)/1000);
                             break;
                         case "irq":
-                            //Timer t;
+                            Timer t;
                             Console.WriteLine("irq testing...please enter to exit");
                             gpioPin.SetDriveMode(GpioPinDriveMode.Input);
                             gpioPin.ValueChanged += UpGpioValueChanged;
-                            //t = new Timer(new TimerCallback(UpGpioIrqProc));
-                            //t.Change(1000, 1000); //1sec interval to count 
+                            t = new Timer(new TimerCallback(UpGpioIrqProc));
+                            t.Change(1000, 1000); //1sec interval to count 
                             Console.ReadLine();
                             rising = falling = 0;
                             gpioPin.ValueChanged -= UpGpioValueChanged;
-                            //t.Dispose();
+                            t.Dispose();
                             break;
                         case "status":
                             Console.WriteLine(gpioPin.GetDriveMode().ToString());
@@ -167,7 +211,7 @@ namespace UpGpioTestTool
         }
 
         static Stopwatch sw = Stopwatch.StartNew();
-        private static void sleep(int ms)
+        private static void sleep(double ms)
         {
             sw.Start();
             while (true)
@@ -181,16 +225,16 @@ namespace UpGpioTestTool
         }
         private static void UpGpioIrqProc(object state)
         {
-            int i, j;
-            for(i = 0;i < lgs.Count; i++)
-            {
-                if (lgs[i].edge == GpioPinEdge.FallingEdge)
-                    falling++;
-                if (lgs[i].edge == GpioPinEdge.RisingEdge)
-                    rising++;
-            }
-            for (j = 0; j < i; j++)
-                lgs.RemoveAt(0);
+            //int i, j;
+            //for(i = 0;i < lgs.Count; i++)
+            //{
+            //    if (lgs[i].edge == GpioPinEdge.FallingEdge)
+            //        falling++;
+            //    if (lgs[i].edge == GpioPinEdge.RisingEdge)
+            //        rising++;
+            //}
+            //for (j = 0; j < i; j++)
+            //    lgs.RemoveAt(0);
 
             Console.Write("\rRising: {0}, falling: {1}", rising, falling);
         }
@@ -215,7 +259,33 @@ namespace UpGpioTestTool
                 default:
                     break;
             }
-            Console.Write("\rRising: {0}, falling: {1}", rising, falling);
+            //Console.Write("\rRising: {0}, falling: {1}", rising, falling);
+        }
+        private static void UpGpioIntTest(GpioPin sender, GpioPinValueChangedEventArgs args)
+        {
+            if(record_intpin!= sender.PinNumber)
+            {
+                Console.WriteLine();
+                Console.WriteLine("Intterupt pin occurr change {0} to {1}", record_intpin, sender.PinNumber);
+                record_intpin = sender.PinNumber;
+                rising = falling = 0;
+            }
+            switch (args.Edge)
+            {
+                case GpioPinEdge.FallingEdge:
+                    {
+                        falling++;
+                        break;
+                    }
+                case GpioPinEdge.RisingEdge:
+                    {
+                        rising++;
+                        break;
+                    }
+                default:
+                    break;
+            }
+
         }
     }
 }
