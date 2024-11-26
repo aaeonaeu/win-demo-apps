@@ -7,6 +7,7 @@ https://up-shop.org/
 ## Software Requirements
 Microsoft Visual Studio 2017/2019/2022
 [Up Framework](https://downloads.up-community.org/download/up-sdk-for-windows-10-and-windows-iot/)
+[Microsoft Visual C++ Redistributable](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170#visual-studio-2015-2017-2019-and-2022)
 
 
 
@@ -17,7 +18,7 @@ Uart port sample app
 
 
 * UPEapiTool  
-Windows Eapi sample app for Dio/I2C/PWM
+Windows Eapi sample apps for Dio/I2C/PWM
     * Dio/C++  
         AAEON EAPI DIO sample app
 
@@ -28,7 +29,7 @@ Windows Eapi sample app for Dio/I2C/PWM
         AAEON EAPI PWM sample app
 
 * UpBusTool  
-Windows api UWP sample app for UpGpioTestTool/UpAdcTestTool/UpI2cTestTool/UpPwmTestTool/UpSpiTestTool/UpFanControl/UpLedTestTool  
+Windows UWP sample apps for HAT pins & Leds  
 
     * UpGpioTestTool  
         Windows api UWP sample app for Gpio
@@ -52,7 +53,8 @@ Windows api UWP sample app for UpGpioTestTool/UpAdcTestTool/UpI2cTestTool/UpPwmT
         Windows api UWP sample app for Led control 
 
 * UPNetBusTool  
-Windows api Net sample app for UpNetGpioTestTool/UpNetAdcTestTool/UPNetI2CTestTool/UPNetPWMTestTool/UpNetSpiTestTool/UpNetLedTestTool
+Windows .Net sample apps for HAT pins & Leds
+.NET SDKs for Visual Studio is required (https://dotnet.microsoft.com/en-us/download/visual-studio-sdks), Supported .Net 6/8/9 
 
     * UpNetGpioTestTool  
         Windows api Net sample app for Gpio
