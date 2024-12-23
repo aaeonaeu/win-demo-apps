@@ -115,6 +115,8 @@ namespace UpGpioTestTool
                             selpin = int.Parse(inArgs[1]);
                             try
                             {
+                                if(gpioPin!=null)
+                                    gpioPin.Dispose();
                                 gpioPin = controller.OpenPin(selpin,GpioSharingMode.SharedReadOnly);
                             } catch (InvalidOperationException ie)
                             {
@@ -269,9 +271,6 @@ namespace UpGpioTestTool
 
         private static void UpGpioValueChanged(GpioPin sender, GpioPinValueChangedEventArgs args)
         {
-            //gs.edge = args.Edge;
-            //gs.tt = Environment.TickCount; //ms
-            //lgs.Add(gs);
             switch (args.Edge)
             {
                 case GpioPinEdge.FallingEdge:
@@ -287,9 +286,6 @@ namespace UpGpioTestTool
                 default:
                     break;
             }
-            GC.Collect();
-
-            //Console.Write("\rRising: {0}, falling: {1}", rising, falling);
         }
         private static void UpGpioIntTest(GpioPin sender, GpioPinValueChangedEventArgs args)
         {
