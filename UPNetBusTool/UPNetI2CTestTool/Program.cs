@@ -15,7 +15,7 @@ namespace UpI2cTestTool
     class Program
     {
         static string Usage =
-          "UpI2CTestTool: Command line I2C testing utility\n" +
+          "UpNetI2CTestTool: Command line I2C testing utility\n" +
           "commands:\n" +
           "\n" +
           "  i2cdetect    List the available address on the default I2C controller.\n" +
@@ -277,7 +277,7 @@ namespace UpI2cTestTool
                         + "BIOS Ver:    " + upb.getbiosname() + "\n"
                         + "Firmware Ver:" + upb.getfirmwarename() + "\n");
 
-            Console.WriteLine("UWP console I2C test:");
+            Console.WriteLine("Up Net console I2C test:");
 
             Console.WriteLine(Usage);
             while (exit == false)

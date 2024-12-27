@@ -18,7 +18,7 @@ namespace UpAdcTestTool
     {
         static int adcmax = 0;
         static string Usage =
-         "UpAdcTestTool: Command line Adc testing utility\n" +
+         "UpNetAdcTestTool: Command line Adc testing utility\n" +
          "commands:\n" +
          "\n" +
          " read {adc number}         Read adc number value\n" +
@@ -106,7 +106,7 @@ namespace UpAdcTestTool
                         + "Firmware Ver:" + upb.getfirmwarename() + "\n");
             controllerinit();
 
-            Console.WriteLine("UWP console ADC test:");
+            Console.WriteLine("Up Net console ADC test:");
 
             Console.WriteLine(Usage);
             adcnum().Wait();

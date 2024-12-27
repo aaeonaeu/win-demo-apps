@@ -17,7 +17,7 @@ namespace UpPwmTestTool
     class Program
     {
         static string Usage =
-          "UpPwmTestTool: Command line PWM testing utility\n" +
+          "UpNetPwmTestTool: Command line PWM testing utility\n" +
           "commands:\n" +
           "\n" +
           "  list           List the available address on the default PWM controller.\n" +
@@ -81,7 +81,7 @@ namespace UpPwmTestTool
                             + "BIOS Ver:    " + upb.getbiosname() + "\n"
                             + "Firmware Ver:" + upb.getfirmwarename() + "\n");
 
-                Console.WriteLine("UWP console PWM test:");
+                Console.WriteLine("Up Net console PWM test:");
                 controllerinit();
 
                 pin1.pin = -1;

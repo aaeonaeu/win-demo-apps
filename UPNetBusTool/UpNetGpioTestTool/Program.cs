@@ -15,7 +15,7 @@ namespace UpGpioTestTool
     class Program
     {
         static string Usage =
-        "UpGpioTestTool: Command line GPIO testing utility\n" +
+        "UpNetGpioTestTool: Command line GPIO testing utility\n" +
         "commands:\n" +
         "\n" +
         "  list         List the available pins on the default GPIO controller.\n" +
@@ -81,7 +81,7 @@ namespace UpGpioTestTool
 
             }
 
-            Console.WriteLine("Up UWP console GPIO test:");
+            Console.WriteLine("Up Net console GPIO test:");
             int pin_cnt = 0;
             if (GpioController.GetDefault() == null)
             {
@@ -222,7 +222,7 @@ namespace UpGpioTestTool
                             Console.WriteLine(gpioPin.Read().ToString());
                             break;
                         case "list":
-                            Console.WriteLine("Available Pins:"+GpioController.GetDefault().PinCount.ToString() + " (start from 0)");
+                            Console.WriteLine("Available Pins:"+controller.PinCount.ToString() + " (start from 0)");
                             break;
                         case "help":
                         default:

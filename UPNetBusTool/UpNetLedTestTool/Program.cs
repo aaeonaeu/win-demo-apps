@@ -28,7 +28,7 @@ namespace UpLedTestTool
         };
 
         static string Usage =
-        "UpLedTestTool: Command line LEDs on/off testing utility\n" +
+        "UpNetLedTestTool: Command line LEDs on/off testing utility\n" +
         "UP/UPX Board: yellow, green, red \n" +
         "UP2/APL03/EHL Board: blue, yellow, green, red \n" +
         "NUC-AMR Board: 0,1,2,3,4,5,6,7 \n" +
