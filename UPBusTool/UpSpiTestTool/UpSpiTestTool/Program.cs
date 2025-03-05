@@ -12,7 +12,7 @@ namespace UpSpiTestTool
 {
     class Program
     {
-        
+
         static string Usage =
           "UpSpiTestTool: Command line SPI testing utility\n" +
           "commands:\n" +
@@ -27,29 +27,32 @@ namespace UpSpiTestTool
           "  Example:     %s> <commands>\n" +
           "  exit         exit SPI test\n" +
           "\n";
-        
+
         struct spiinfo
         {
+            public int bus;
             public int DataBitLength;
             public int ClockFrequency;
             public int ChipSelectLine;
             public SpiMode Mode;
-            public SpiSharingMode SharingMode; 
+            public SpiSharingMode SharingMode;
         }
         static spiinfo spi;
         static void spiset()
         {
-           try
+            try
             {
+                Console.WriteLine("Select Bus:");
+                spi.bus = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Set DataBitLength:");
                 spi.DataBitLength = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Set ClockFrequency:");
                 spi.ClockFrequency = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Set ChipSelectLine:");
                 spi.ChipSelectLine = Convert.ToInt32(Console.ReadLine());
-                while(true)
+                while (true)
                 {
-                    int mode=-1;
+                    int mode = -1;
                     Console.WriteLine("Set Mode:");
                     mode = Convert.ToInt32(Console.ReadLine());
                     if (mode == 0)
@@ -62,12 +65,12 @@ namespace UpSpiTestTool
                         spi.Mode = SpiMode.Mode1;
                         break;
                     }
-                    else if(mode==2)
+                    else if (mode == 2)
                     {
                         spi.Mode = SpiMode.Mode2;
                         break;
                     }
-                    else if (mode==3)
+                    else if (mode == 3)
                     {
                         spi.Mode = SpiMode.Mode3;
                         break;
@@ -90,17 +93,19 @@ namespace UpSpiTestTool
                     }
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine(e.Message);
             }
         }
-        static async Task spiwrite(string [] input)
+        static async Task spiwrite(string[] input)
         {
             try
             {
                 UpBridge.Up upb = new UpBridge.Up();
-                SpiController controller = await SpiController.GetDefaultAsync();
+
+                SpiController controller = (await SpiController.GetControllersAsync(UpBridge.UpSpiProvider.GetSpiProvider()))[spi.bus];
+                //SpiController controller = await SpiController.GetDefaultAsync();
                 SpiConnectionSettings settings = new SpiConnectionSettings(spi.ChipSelectLine);
                 settings.ClockFrequency = spi.ClockFrequency;
                 settings.DataBitLength = spi.DataBitLength;
@@ -109,11 +114,11 @@ namespace UpSpiTestTool
                 byte[] wrtiebuf = new byte[input.Length - 1];
                 for (int i = 1; i < input.Length; i++)
                 {
-                    wrtiebuf[i - 1] = Convert.ToByte(input[i],16);
+                    wrtiebuf[i - 1] = Convert.ToByte(input[i], 16);
                 }
                 controller.GetDevice(settings).Write(wrtiebuf);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine(e.Message);
             }
@@ -122,10 +127,11 @@ namespace UpSpiTestTool
         {
             try
             {
-                if(input.Length==2)
+                if (input.Length == 2)
                 {
                     UpBridge.Up upb = new UpBridge.Up();
-                    SpiController controller = await SpiController.GetDefaultAsync();
+                    SpiController controller = (await SpiController.GetControllersAsync(UpBridge.UpSpiProvider.GetSpiProvider()))[spi.bus];
+                    //SpiController controller = await SpiController.GetDefaultAsync();
                     SpiConnectionSettings settings = new SpiConnectionSettings(spi.ChipSelectLine);
                     settings.ClockFrequency = spi.ClockFrequency;
                     settings.DataBitLength = spi.DataBitLength;
@@ -135,7 +141,7 @@ namespace UpSpiTestTool
                     controller.GetDevice(settings).Read(readbuf);
                     for (int i = 0; i < readbuf.Length; i++)
                     {
-                        Console.WriteLine(i+" byte: "+readbuf[i].ToString("X"));
+                        Console.WriteLine(i + " byte: " + readbuf[i].ToString("X"));
                     }
                 }
                 else
@@ -152,21 +158,22 @@ namespace UpSpiTestTool
         static async Task spiwriteread(string[] input)
         {
             try
-            {          
+            {
                 UpBridge.Up upb = new UpBridge.Up();
-                SpiController controller = await SpiController.GetDefaultAsync();
+                SpiController controller = (await SpiController.GetControllersAsync(UpBridge.UpSpiProvider.GetSpiProvider()))[spi.bus];
+                //SpiController controller = await SpiController.GetDefaultAsync();
                 SpiConnectionSettings settings = new SpiConnectionSettings(spi.ChipSelectLine);
                 settings.ClockFrequency = spi.ClockFrequency;
                 settings.DataBitLength = spi.DataBitLength;
                 settings.Mode = spi.Mode;
                 settings.SharingMode = spi.SharingMode;
                 byte[] wrtiebuf = new byte[input.Length - 2];
-                for (int i = 1; i <= input.Length-2; i++)
+                for (int i = 1; i <= input.Length - 2; i++)
                 {
-                    wrtiebuf[i - 1] = Convert.ToByte(input[i],16);
+                    wrtiebuf[i - 1] = Convert.ToByte(input[i], 16);
                 }
-                byte[] readbuf = new byte[Convert.ToInt32(input[input.Length-1])];
-                controller.GetDevice(settings).TransferSequential(wrtiebuf,readbuf);
+                byte[] readbuf = new byte[Convert.ToInt32(input[input.Length - 1])];
+                controller.GetDevice(settings).TransferSequential(wrtiebuf, readbuf);
                 for (int i = 0; i < readbuf.Length; i++)
                 {
                     Console.WriteLine(i + " byte: " + readbuf[i].ToString("X"));
@@ -182,7 +189,8 @@ namespace UpSpiTestTool
             try
             {
                 UpBridge.Up upb = new UpBridge.Up();
-                SpiController controller = await SpiController.GetDefaultAsync();
+                SpiController controller = (await SpiController.GetControllersAsync(UpBridge.UpSpiProvider.GetSpiProvider()))[spi.bus];
+                //SpiController controller = await SpiController.GetDefaultAsync();
                 SpiConnectionSettings settings = new SpiConnectionSettings(spi.ChipSelectLine);
                 settings.ClockFrequency = spi.ClockFrequency;
                 settings.DataBitLength = spi.DataBitLength;
@@ -192,9 +200,9 @@ namespace UpSpiTestTool
                 byte[] readbuf = new byte[wrtiebuf.Length];
                 for (int i = 1; i < input.Length; i++)
                 {
-                    wrtiebuf[i - 1] = Convert.ToByte(input[i],16);
+                    wrtiebuf[i - 1] = Convert.ToByte(input[i], 16);
                 }
-                controller.GetDevice(settings).TransferFullDuplex(wrtiebuf,readbuf);
+                controller.GetDevice(settings).TransferFullDuplex(wrtiebuf, readbuf);
                 for (int i = 0; i < readbuf.Length; i++)
                 {
                     Console.WriteLine(i + " byte: " + readbuf[i].ToString("X"));
@@ -246,7 +254,7 @@ namespace UpSpiTestTool
                         spifullduplex(inputnum).Wait();
                         break;
                     case "info":
-                        Console.WriteLine("ChipSelectLine   :   " + spi.ChipSelectLine+"\n");
+                        Console.WriteLine("ChipSelectLine   :   " + spi.ChipSelectLine + "\n");
                         Console.WriteLine("ClockFrequency   :   " + spi.ClockFrequency + "\n");
                         Console.WriteLine("DataBitLength    :   " + spi.DataBitLength + "\n");
                         Console.WriteLine("Mode             :   " + spi.Mode + "\n");
