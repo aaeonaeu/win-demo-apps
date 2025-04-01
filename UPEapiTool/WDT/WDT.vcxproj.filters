@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="WDT.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{4b47fd07-484e-4315-99a0-f66f1abd740a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\aaeonEAPI.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\aaeonFramework.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\EAPIStatusCode.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Resource.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\stdafx.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\targetver.h">
+      <Filter>include</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

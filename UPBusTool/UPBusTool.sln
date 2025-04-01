@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29326.143
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35004.147
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpAdcTestTool", "UpAdcTestTool\UpAdcTestTool\UpAdcTestTool.csproj", "{408BF9FF-7B05-4833-8BD6-2945AFBD5527}"
 EndProject
@@ -21,6 +21,8 @@ Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "UpFanSetup", "UpFanControll
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpLedTestTool", "UpLedTestTool\UpLedTestTool\UpLedTestTool.csproj", "{A69BA734-3E48-40DC-AFFD-068F3B531098}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpWdtTestTool", "UPWdtTestTool\UpWdtTestTool.csproj", "{DFC68074-ED3C-40E5-842D-5C103CEDAE6C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -203,6 +205,36 @@ Global
 		{A69BA734-3E48-40DC-AFFD-068F3B531098}.Release|x86.ActiveCfg = Release|x86
 		{A69BA734-3E48-40DC-AFFD-068F3B531098}.Release|x86.Build.0 = Release|x86
 		{A69BA734-3E48-40DC-AFFD-068F3B531098}.Release|x86.Deploy.0 = Release|x86
+		{DFC68074-ED3C-40E5-842D-5C103CEDAE6C}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{DFC68074-ED3C-40E5-842D-5C103CEDAE6C}.Debug|Any CPU.Build.0 = Debug|x64
+		{DFC68074-ED3C-40E5-842D-5C103CEDAE6C}.Debug|Any CPU.Deploy.0 = Debug|x64
+		{DFC68074-ED3C-40E5-842D-5C103CEDAE6C}.Debug|ARM.ActiveCfg = Debug|ARM
+		{DFC68074-ED3C-40E5-842D-5C103CEDAE6C}.Debug|ARM.Build.0 = Debug|ARM
+		{DFC68074-ED3C-40E5-842D-5C103CEDAE6C}.Debug|ARM.Deploy.0 = Debug|ARM
+		{DFC68074-ED3C-40E5-842D-5C103CEDAE6C}.Debug|ARM64.ActiveCfg = Debug|ARM64
+		{DFC68074-ED3C-40E5-842D-5C103CEDAE6C}.Debug|ARM64.Build.0 = Debug|ARM64
+		{DFC68074-ED3C-40E5-842D-5C103CEDAE6C}.Debug|ARM64.Deploy.0 = Debug|ARM64
+		{DFC68074-ED3C-40E5-842D-5C103CEDAE6C}.Debug|x64.ActiveCfg = Debug|x64
+		{DFC68074-ED3C-40E5-842D-5C103CEDAE6C}.Debug|x64.Build.0 = Debug|x64
+		{DFC68074-ED3C-40E5-842D-5C103CEDAE6C}.Debug|x64.Deploy.0 = Debug|x64
+		{DFC68074-ED3C-40E5-842D-5C103CEDAE6C}.Debug|x86.ActiveCfg = Debug|x86
+		{DFC68074-ED3C-40E5-842D-5C103CEDAE6C}.Debug|x86.Build.0 = Debug|x86
+		{DFC68074-ED3C-40E5-842D-5C103CEDAE6C}.Debug|x86.Deploy.0 = Debug|x86
+		{DFC68074-ED3C-40E5-842D-5C103CEDAE6C}.Release|Any CPU.ActiveCfg = Release|x64
+		{DFC68074-ED3C-40E5-842D-5C103CEDAE6C}.Release|Any CPU.Build.0 = Release|x64
+		{DFC68074-ED3C-40E5-842D-5C103CEDAE6C}.Release|Any CPU.Deploy.0 = Release|x64
+		{DFC68074-ED3C-40E5-842D-5C103CEDAE6C}.Release|ARM.ActiveCfg = Release|ARM
+		{DFC68074-ED3C-40E5-842D-5C103CEDAE6C}.Release|ARM.Build.0 = Release|ARM
+		{DFC68074-ED3C-40E5-842D-5C103CEDAE6C}.Release|ARM.Deploy.0 = Release|ARM
+		{DFC68074-ED3C-40E5-842D-5C103CEDAE6C}.Release|ARM64.ActiveCfg = Release|ARM64
+		{DFC68074-ED3C-40E5-842D-5C103CEDAE6C}.Release|ARM64.Build.0 = Release|ARM64
+		{DFC68074-ED3C-40E5-842D-5C103CEDAE6C}.Release|ARM64.Deploy.0 = Release|ARM64
+		{DFC68074-ED3C-40E5-842D-5C103CEDAE6C}.Release|x64.ActiveCfg = Release|x64
+		{DFC68074-ED3C-40E5-842D-5C103CEDAE6C}.Release|x64.Build.0 = Release|x64
+		{DFC68074-ED3C-40E5-842D-5C103CEDAE6C}.Release|x64.Deploy.0 = Release|x64
+		{DFC68074-ED3C-40E5-842D-5C103CEDAE6C}.Release|x86.ActiveCfg = Release|x86
+		{DFC68074-ED3C-40E5-842D-5C103CEDAE6C}.Release|x86.Build.0 = Release|x86
+		{DFC68074-ED3C-40E5-842D-5C103CEDAE6C}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
