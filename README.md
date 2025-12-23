@@ -13,9 +13,15 @@ Microsoft Visual Studio 2017/2019/2022
 
 ### Brief description
 
-* MinComm  
-Uart port sample app
+* Samples  
+    * MinComm  
+        Uart port sample app
 
+    * lora_pkt_fwd  
+        Windows app for LoRa packet forward
+
+    * UpSpiCan  
+        UPSPICAN for MCP2515 module on UWP App
 
 * UPEapiTool  
 Windows Eapi sample apps for Dio/I2C/PWM
@@ -75,7 +81,6 @@ Windows .Net sample apps for HAT pins & Leds
         Windows api Net sample app for Led control 
 
 
-* lora_pkt_fwd  
-Windows app for LoRa packet forward
+
  
 
