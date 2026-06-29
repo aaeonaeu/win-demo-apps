@@ -1,0 +1,61 @@
+# Visual Studio build files
+**/*.obj
+**/*.exe
+#*.dll
+#*.lib
+**/*.pdb
+**/*.ipch
+**/*.log
+**/*.tlog
+**/*.lastbuildstate
+**/*.idb
+**/*.sdf
+**/*.opensdf
+**/*.cache
+**/*.db
+**/*.user
+**/*.suo
+**/*.VC.db
+**/*.VC.opendb
+**/.vs/
+**/obj
+UPBusTool/Release/
+
+# Build output folders
+**/Debug/
+**/Release/
+**/x64/
+**/x86/
+**/ARM/
+**/ARM64/
+
+# Driver specific
+#*.sys
+#*.inf
+#*.cat
+**/*.cer
+**/*.sign
+**/*.rsp
+
+# WDK specific
+**/*.tlh
+**/*.tli
+**/*.ilk
+**/*.iobj
+**/*.ipdb
+**/*.map
+**/*.exp
+
+# VS Code
+**/.vscode/
+
+# Windows specific
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+
+# Others
+**/*.bak
+**/*.tmp
+*.~*
