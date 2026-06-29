@@ -68,7 +68,7 @@
     </dependentAssembly>
   </dependency>
   -->
-  <file name="UpEApis.dll">
-    <activatableClass name="UpEApis.EApis" threadingModel="both" xmlns="urn:schemas-microsoft-com:winrt.v1" />
+  <file name="UpBridge.dll">
+    <activatableClass name="UpBridge.Up" threadingModel="both" xmlns="urn:schemas-microsoft-com:winrt.v1" />
   </file>
 </assembly>
